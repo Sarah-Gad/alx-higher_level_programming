@@ -4,4 +4,4 @@ for i in range(122, 96, -1):
         alpha = chr(i).lower()
     else:
         alpha = chr(i).upper()
-     print("{}".format(alpha), end="")
+    print("{}".format(alpha), end="")

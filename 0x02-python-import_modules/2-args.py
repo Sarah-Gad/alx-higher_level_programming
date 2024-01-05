@@ -6,10 +6,9 @@ if __name__ == "__main__":
         print(f"{thelen} arguments.")
     elif thelen == 1:
         print(f"{thelen} argument:")
-        print(f"{thelen}: {(sys.argv[1])}")
     else:
-        idx = 1
         print(f"{thelen} arguments:")
-        while idx < 7:
-            print(f"{idx}: {(sys.argv[idx])}")
-            idx = idx + 1
+    idx = 1
+    while idx < (thelen + 1):
+        print(f"{idx}: {(sys.argv[idx])}")
+        idx = idx + 1

@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    if sentence is None:
+    if sentence is None or len(sentence) == 0:
         thelen = len(sentence)
-        first = "None"
+        first = None
         returned = (thelen, first)
         return returned
     else:

@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 def no_c(my_string):
-    if my_string is None:
-        my_string = ""
-    else:
-        convrtd = list(my_string)
-        thelen = len(convrtd)
-        nwstr = []
-        for i in range(thelen):
-            if convrtd[i] != "c" and convrtd[i] != "C":
-                nwstr.append(convrtd[i])
-        return ("".join(nwstr))
+    nwlst = list(my_string)
+    i = 0
+    while i < len(nwlst):
+        if nwlst[i] == 'c' or nwlst[i] == 'C':
+            nwlst.pop(i)
+        else:
+            i += 1
+    return (''.join(nwlst))

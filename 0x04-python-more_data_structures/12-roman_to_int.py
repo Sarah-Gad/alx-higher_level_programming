@@ -1,27 +1,20 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not isinstance(roman_string, str) or not roman_string:
+    if not isinstance(roman_string, str):
         return 0
-
-    roman_v = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000
-            }
-
+    nums = (
+            ('MMM', 3000), ('MM', 2000), ('M', 1000), ('CM', 900),
+            ('DCCC', 800), ('DCC', 700), ('DC', 600), ('D', 500),
+            ('CD', 400), ('CCC', 300), ('CC', 200), ('C', 100),
+            ('XC', 90), ('LXXX', 80), ('LXX', 70), ('LX', 60),
+            ('L', 50), ('XL', 40), ('XXX', 30), ('XX', 20),
+            ('X', 10), ('IX', 9), ('VIII', 8), ('VII', 7),
+            ('VI', 6), ('V', 5), ('IV', 4), ('III', 3),
+            ('II', 2), ('I', 1))
     tot = 0
-    prev_v = 0
-
-    for sym in reversed(roman_string):
-        value_r = roman_v[sym]
-        if value_r >= prev_v:
-            tot += value_r
-        else:
-            tot -= value_r
-            prev_v = value_r
-
+    while roman_string:
+        for sym, value in nums:
+            if roman_string.startswith(sym):
+                tot += value
+                roman_string = roman_string[len(sym):]
     return tot

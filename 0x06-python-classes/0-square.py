@@ -3,4 +3,5 @@
 
 
 class Square:
+    """the code inside the class"""
     pass

@@ -32,3 +32,13 @@ class Square:
         the current square area.
         """
         return self.__size * self.__size
+
+    def my_print(self):
+        """ a method to prints in stdout the square with the character #"""
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__size):
+                for s in range(self.__size):
+                    print("#", end="")
+                print()

@@ -3,9 +3,9 @@
 
 import math
 
+
 class MagicClass:
     """"This is the circle"""
-
 
     def __init__(self, radius=0):
         """the start of the cisrle"""

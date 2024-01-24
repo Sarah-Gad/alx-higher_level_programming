@@ -24,10 +24,9 @@ class Square:
         """ a method to ba able to edit the value of size"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0:")
-        else:
-            self.__size = value
+        self.__size = value
 
     @property
     def position(self):
@@ -37,28 +36,18 @@ class Square:
     @position.setter
     def position(self, value):
         """ a method to set the value of position"""
-        if (not isinstance(value, tuple) or len(value) != 2 or
-                not all(isinstance(first, int) for first in value) or
-                not all(second >= 0 for second in value)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        if not isinstance(value, tuple) or \
+                len(value) != 2 or not \
+                all(isinstance(x, int) and x >= 0 for x in value):
+            raise TypeError(
+                            "position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """ This is instance method that reterns
         the current square area.
         """
-        return self.__size * self.__size
-
-    def my_print(self):
-        """ a method to prints in stdout the square with the character #"""
-        if self.__size == 0:
-            print()
-        else:
-            for i in range(self.__size):
-                for s in range(self.__size):
-                    print("#", end="")
-                print()
+        return self.__size ** 2
 
     def my_print(self):
         """Print the square with the # character."""

@@ -58,16 +58,10 @@ class Rectangle:
     def __str__(self):
         """ a method to return the shape of the rectangle"""
         if self.__width == 0 or self.__height == 0:
-            return ("")
+            return ""
 
-        else:
-            shape = []
-            for i in range(self.__height):
-                for s in range(self.__width):
-                    shape.append(self.print_symbol)
-                if i != self.__height - 1:
-                    shape.append("\n")
-            return ("".join(shape))
+        return "\n".join([str(self.print_symbol) * self.__width for i in range(
+            self.__height)])
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)

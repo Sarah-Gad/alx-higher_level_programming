@@ -54,7 +54,8 @@ class Rectangle:
     def __str__(self):
         """ a method to return the shape of the rectangle"""
         if self.__width == 0 or self.__height == 0:
-            return""
+            return ("")
+
         else:
             shape = []
             for i in range(self.__height):

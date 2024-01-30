@@ -74,4 +74,8 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        Rectangle.number_of_instanceis -= 1
+
+    @classmethod
+    def set_symbol(cls, symbol):
+        cls.print_symbol = symbol

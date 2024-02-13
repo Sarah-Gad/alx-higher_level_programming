@@ -69,7 +69,7 @@ class Rectangle(Base):
     def display(self):
         """Tjis method prints the rectangle"""
         for s in range(self.y):
-            print("", end= "")
+            print("")
         for i in range(self.height):
             for h in range(self.x):
                 print(" ", end="")

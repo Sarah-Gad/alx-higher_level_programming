@@ -65,3 +65,10 @@ class Rectangle(Base):
     def area(self):
         """this method returns the area value of the Rectangle"""
         return self.width * self.height
+
+    def display(self):
+        """Tjis method prints the rectangle"""
+        for i in range(self.height):
+            for h in range(self.width):
+                print("#", end="")
+            print("")

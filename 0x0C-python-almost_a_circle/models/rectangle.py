@@ -113,10 +113,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ This method returns a dict representationm"""
-        return {
-                "id": self.id,
-                "width": self.width,
-                "height": self.height,
-                "x": self.x,
-                "y": self.y
-                }
+        listy = ['id', 'width', 'height', 'x', 'y']
+        dicty = {}
+        for k in listy:
+            dicty[k] = getattr(self, k)
+        return dicty

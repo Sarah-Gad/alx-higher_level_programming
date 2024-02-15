@@ -112,7 +112,7 @@ class Rectangle(Base):
                     self.y = val
 
     def to_dictionary(self):
-        """method returns the dictionary representation of a Rectangle"""
+        """returns the dictionary representation of a Rectangle"""
         dicty = {}
         dicty["id"] = self.id
         dicty["width"] = self.width

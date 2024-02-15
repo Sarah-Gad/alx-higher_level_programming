@@ -110,11 +110,3 @@ class Rectangle(Base):
                     self.x = val
                 if key == "y":
                     self.y = val
-
-    def to_dictionary(self):
-        """ This method returns a dict representationm"""
-        listy = ['id', 'width', 'height', 'x', 'y']
-        dicty = {}
-        for k in listy:
-            dicty[k] = getattr(self, k)
-        return dicty

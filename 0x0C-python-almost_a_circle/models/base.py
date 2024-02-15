@@ -58,8 +58,11 @@ class Base:
     def load_from_file(cls):
         """a method that returns a list of instances"""
         name = cls.__name__ + ".json"
-        with open(name, 'r') as myfile:
-            content = myfile.read()
-        listofdict = Base.from_json_string(content)
-        listofinst = [cls.create(**dicty) for dicty in listofdict]
-        return listofinst
+        try:
+            with open(name, 'r') as myfile:
+                content = myfile.read()
+            listofdict = Base.from_json_string(content)
+            listofinst = [cls.create(**dicty) for dicty in listofdict]
+            return listofinst
+        except FileNotFoundError:
+            return []

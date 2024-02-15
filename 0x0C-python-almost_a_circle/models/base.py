@@ -33,3 +33,12 @@ class Base:
             else:
                 listofdic = [ob.to_dictionary() for ob in list_objs]
                 myfile.write(Base.to_json_string(listofdic))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ This method returns the list of the JSON str"""
+        if json_string is None or not json_string:
+            return "[]"
+        else:
+            thelist = json.loads(json_string)
+            return thelist

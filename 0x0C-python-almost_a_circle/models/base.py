@@ -45,9 +45,11 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        if cls.__name__ == "Rectangle":
-            dummy = cls(5, 6, 7, 8)
-        else:
-            dummy = cls(8, 7, 3)
-        dummy.update(**dictionary)
-        return dummy
+        
+        if dictionary and dictionary is not None:
+            if cls.__name__ == "Rectangle":
+                dummy = cls(5, 6)
+            else:
+                dummy = cls(8)
+            dummy.update(**dictionary)
+            return dummy

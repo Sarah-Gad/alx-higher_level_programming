@@ -110,3 +110,13 @@ class Rectangle(Base):
                     self.x = val
                 if key == "y":
                     self.y = val
+
+    def to_dictionary(self):
+        """method returns the dictionary representation of a Rectangle"""
+        dicty = {}
+        dicty["id"] = self.id
+        dicty["width"] = self.width
+        dicty["height"] = self.height
+        dicty["x"] = self.x
+        dicty["y"] = self.y
+        return dicty

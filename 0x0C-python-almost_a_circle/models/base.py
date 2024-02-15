@@ -48,8 +48,8 @@ class Base:
         """a emthod that returns an instance with all attributes already set"""
         if dictionary and dictionary is not None:
             if cls.__name__ == "Rectangle":
-                dummy = cls(5, 6)
+                dummy = cls(5, 6, 8, 7)
             else:
-                dummy = cls(8)
+                dummy = cls(8, 2, 3)
             dummy.update(**dictionary)
             return dummy

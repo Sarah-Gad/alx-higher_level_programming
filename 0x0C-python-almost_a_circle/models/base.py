@@ -42,3 +42,12 @@ class Base:
         else:
             thelist = json.loads(json_string)
             return thelist
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(5, 6, 7, 8)
+        else:
+            dummy = cls(8, 7, 3)
+        dummy.update(**dictionary)
+        return dummy

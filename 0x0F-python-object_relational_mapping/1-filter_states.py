@@ -17,7 +17,7 @@ def main():
             db=sys.argv[3])
     newcur = newcon.cursor()
     newcur.execute(
-            "SELECT * FROM states WHERE `name` LIKE 'N%' ORDER BY `id` ASC")
+            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
     for row in newcur:
         print(row)
     newcur.close()

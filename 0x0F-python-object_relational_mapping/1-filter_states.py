@@ -17,7 +17,7 @@ if __name__ == "__main__":
             db=sys.argv[3])
     newcur = newcon.cursor()
     newcur.execute(
-            "SELECT * FROM states WHERE name LIKE 'N%'"
+            "SELECT * FROM states WHERE name LIKE BINARY 'N%'"
             "ORDER BY id ASC")
     for row in newcur.fetchall():
         print(row)

@@ -18,7 +18,7 @@ def main():
     newcur = newcon.cursor()
     newcur.execute(
             "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
-    for row in newcur:
+    for row in newcur.fetchall():
         print(row)
     newcur.close()
     newcon.close()

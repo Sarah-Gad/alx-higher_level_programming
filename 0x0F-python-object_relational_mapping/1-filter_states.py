@@ -8,7 +8,7 @@ import sys
 import MySQLdb
 
 
-def main():
+if __name__ == "__main__":
     newcon = MySQLdb.connect(
             host="localhost",
             port=3306,
@@ -22,7 +22,3 @@ def main():
         print(row)
     newcur.close()
     newcon.close()
-
-
-if __name__ == "__main__":
-    main()

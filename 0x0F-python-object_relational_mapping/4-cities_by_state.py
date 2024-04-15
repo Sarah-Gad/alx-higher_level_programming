@@ -15,9 +15,11 @@ def main():
             passwd=sys.argv[2],
             db=sys.argv[3])
     newcurs = newcon.cursor()
-    newcurs.execute("SELECT cities.id, cities.name, states.name FROM cities "
+    newcurs.execute(
+            "SELECT cities.id, cities.name, states.name FROM cities "
             "INNER JOIN states ON cities.state_id=states.id "
-            "ORDER BY cities.id ASC")
+            "ORDER BY cities.id ASC"
+            )
     for row in newcurs:
         print(row)
     newcurs.close()

@@ -17,8 +17,8 @@ def main():
             db=sys.argv[3])
     newcurs = newcon.cursor()
     newcurs.execute(
-            f"SELECT * FROM `states` WHERE `name` = '{sys.argv[4]}'"
-            "ORDER BY `id` ASC")
+            "SELECT * FROM `states` WHERE `name` = '{}'"
+            "ORDER BY `id` ASC".format(sys.argv[4]))
     for row in newcurs:
         print(row)
     newcurs.close()

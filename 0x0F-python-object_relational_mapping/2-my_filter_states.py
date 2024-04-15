@@ -17,7 +17,7 @@ def main():
             db=sys.argv[3])
     newcurs = newcon.cursor()
     newcurs.execute(
-            "SELECT * FROM `states` WHERE `name` = '{}'"
+            "SELECT * FROM `states` WHERE BINARY `name` = '{}'"
             "ORDER BY `id` ASC".format(sys.argv[4]))
     for row in newcurs:
         print(row)

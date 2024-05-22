@@ -2,8 +2,8 @@
 /*
 This script will display the status code of a GET request.
 */
-const get_req = require('request');
-get_req(process.argv[2], (theerror, respo, body) => {
+const getReq = require('request');
+getReq(process.argv[2], (theerror, respo, body) => {
   if (theerror) {
     console.error(theerror);
     return;

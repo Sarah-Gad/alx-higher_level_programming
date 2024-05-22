@@ -5,7 +5,7 @@ const myArgs = process.argv;
 const url = 'https://swapi-api.hbtn.io/api/films/' + myArgs[2];
 const orderDict = {};
 const options = {
-  url: url,
+  url,
   headers: {
     'User-Agent': 'request'
   }

@@ -4,7 +4,7 @@ this script will get the contents of a webpage and stores it in a file.
 */
 const req = require('request');
 const writer = require('fs');
-req(process.argv[2], { json: true }, (theerror, respo, body) => {
+req(process.argv[2], (theerror, respo, body) => {
   if (theerror) {
     console.error(theerror);
     return;
